@@ -18,10 +18,10 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - patch     # [unix]
   host:
     - msinttypes  # [win and py2k]
     - python
